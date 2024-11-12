@@ -1,0 +1,36 @@
+# Get the number of visitors
+visitors = int(input())
+
+# Initialize counters for each activity
+back = chest = legs = abdominals = protein_shake = protein_bar = work_out = protein = 0
+
+# Loop over each visitor and collect their activity
+for _ in range(visitors):
+    activity = input()
+    if activity == "Back":
+        back += 1
+        work_out += 1
+    elif activity == "Chest":
+        chest += 1
+        work_out += 1
+    elif activity == "Legs":
+        legs += 1
+        work_out += 1
+    elif activity == "Abs":
+        abdominals += 1
+        work_out += 1
+    elif activity == "Protein shake":
+        protein_shake += 1
+        protein += 1
+    elif activity == "Protein bar":
+        protein_bar += 1
+        protein += 1
+
+print(f"{back} - back")
+print(f"{chest} - chest")
+print(f"{legs} - legs")
+print(f"{abdominals} - abs")
+print(f"{protein_shake} - protein shake")
+print(f"{protein_bar} - protein bar")
+print(f"{(work_out / visitors) * 100:.2f}% - work out")
+print(f"{(protein / visitors) * 100:.2f}% - protein")
