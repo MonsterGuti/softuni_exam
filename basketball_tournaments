@@ -1,0 +1,21 @@
+wins = loses = total_games = 0
+while True:
+    tournament_name = input("Enter tournament name (or 'End of tournaments' to stop): ")
+    if tournament_name != "End of tournaments":
+        games = int(input(f"Enter number of games for {tournament_name}: "))
+        total_games += games
+        for i in range(games):
+            team_1_result = int(input(f"Enter result for Team 1 in game {i + 1}: "))
+            team_2_result = int(input(f"Enter result for Team 2 in game {i + 1}: "))
+            if team_1_result > team_2_result:
+                wins += 1
+                print(f"Game {i + 1} of tournament {tournament_name}: win with {team_1_result - team_2_result} points.")
+            else:
+                loses += 1
+                print(f"Game {i + 1} of tournament {tournament_name}: lost with {team_2_result - team_1_result} points.")
+    else:
+        break
+win_percentage = wins / total_games * 100
+loses_percentage = 100 - win_percentage
+print(f"{win_percentage:.2f}% matches win")
+print(f"{loses_percentage:.2f}% matches lost")
