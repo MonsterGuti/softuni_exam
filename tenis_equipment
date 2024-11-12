@@ -1,0 +1,15 @@
+import math
+
+racket_price = float(input("Enter the price of one racket: "))
+rackets = int(input("Enter the number of rackets: "))
+sneakers = int(input("Enter the number of sneakers: "))
+
+sneakers_price = 1/6 * racket_price
+total_price = rackets * racket_price + sneakers * sneakers_price
+final_price = 1.2 * total_price
+
+djokovic_payment = 1/8 * final_price
+sponsor_payment = final_price - djokovic_payment
+
+print(f"Price to be paid by Djokovic: {math.floor(djokovic_payment)}")
+print(f"Price to be paid by sponsors: {math.ceil(sponsor_payment)}")
