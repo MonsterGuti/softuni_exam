@@ -1,0 +1,32 @@
+player_1 = input()
+player_2 = input()
+command = input()
+player_1_points = 0
+player_2_points = 0
+
+while command != "End of game":
+    card_1 = int(command)
+    card_2 = int(input())
+
+    if card_1 > card_2:
+        player_1_points += card_1 - card_2
+    elif card_2 > card_1:
+        player_2_points += card_2 - card_1
+    else:
+        print("Number wars!")
+        card_1 = int(input())
+        card_2 = int(input())
+
+        if card_1 > card_2:
+            player_1_points += 1
+            print(f"{player_1} is winner with {player_1_points} points")
+            break
+        elif card_2 > card_1:
+            player_2_points += 1
+            print(f"{player_2} is winner with {player_2_points} points")
+            break
+
+    command = input()
+
+print(f"{player_1} has {player_1_points} points")
+print(f"{player_2} has {player_2_points} points")
