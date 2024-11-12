@@ -1,0 +1,16 @@
+minutes = int(input("Enter the minutes: "))
+seconds = int(input("Enter the seconds: "))
+track_length = float(input("Enter the track length (in meters): "))
+time_per_100m = int(input("Enter the time per 100 meters: "))
+
+needed_time = minutes * 60 + seconds
+times_of_delay_time = track_length / 120
+total_delay_time = times_of_delay_time * 2.5
+marin_time = track_length / 100 * time_per_100m - total_delay_time
+
+if marin_time <= needed_time:
+    print(f"Marin Bangiev won an Olympic quota!")
+    print(f"His time is {marin_time:.3f}.")
+else:
+    seconds_needed = marin_time - needed_time
+    print(f"No, Marin failed! He was {seconds_needed:.3f} second slower.")
