@@ -1,0 +1,18 @@
+film_budget = float(input("Enter the film budget: "))
+statists = int(input("Enter the number of statists: "))
+price_per_statist = float(input("Enter the price per statist: "))
+
+decor_costs = 0.10 * film_budget
+clothing_cost = statists * price_per_statist
+if statists > 150:
+    clothing_cost *= 0.90
+
+total_costs = decor_costs + clothing_cost
+if total_costs > film_budget:
+    print("Not enough money!")
+    money_needed = total_costs - film_budget
+    print(f"Wingard needs {money_needed:.2f} leva more.")
+else:
+    print("Action!")
+    money_left = film_budget - total_costs
+    print(f"Wingard starts filming with {money_left:.2f} leva left.")

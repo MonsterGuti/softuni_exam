@@ -1,0 +1,27 @@
+students_count = int(input())
+top_students = very_good = good = fail = sum_of_evaluations = 0
+for _ in range(students_count):
+    evaluation = float(input())
+    if evaluation >= 5:
+        sum_of_evaluations += evaluation
+        top_students += 1
+    elif 4 <= evaluation <= 4.99:
+        sum_of_evaluations += evaluation
+        very_good += 1
+    elif 3 <= evaluation <= 3.99:
+        sum_of_evaluations += evaluation
+        good += 1
+    else:
+        sum_of_evaluations += evaluation
+        fail += 1
+top_students_percent = top_students / students_count * 100
+very_good_percent = very_good / students_count * 100
+good_percent = good / students_count * 100
+fail_percent = fail / students_count * 100
+average_evaluation = sum_of_evaluations / (top_students + very_good + good + fail)
+
+print(f"Top students: {top_students_percent:.2f}%")
+print(f"Between 4.00 and 4.99: {very_good_percent:.2f}%")
+print(f"Between 3.00 and 3.99: {good_percent:.2f}%")
+print(f"Fail: {fail_percent:.2f}%")
+print(f"Average: {average_evaluation:.2f}")

@@ -1,0 +1,44 @@
+# k = int(input())
+# l = int(input())
+# m = int(input())
+# n = int(input())
+#
+# first_number_1 = second_number_1 = first_number_2 = second_number_2 = 0
+# for a in range(k, 8, 1):
+#     if a % 2 == 0:
+#         first_number_1 = a
+#     for b in range(9, l, -1):
+#         if b % 2 != 0:
+#             second_number_1 = b
+# for c in range(m, 8, 1):
+#     if c % 2 == 0:
+#         first_number_2 = c
+#     for d in range(9, n, -1):
+#         if d % 2 != 0:
+#             second_number_2 = d
+#             print(f"{first_number_1}{first_number_2} - {second_number_1}{second_number_2}")
+#     if first_number_1 == first_number_2 and second_number_1 == second_number_2:
+#         print("Cannot change the same player.")
+#         continue
+
+k = int(input())
+l = int(input())
+m = int(input())
+n = int(input())
+
+valid_changes = 0
+for a in range(k, 9):
+    if a % 2 == 0:
+        for b in range(9, l - 1, -1):
+            if b % 2 != 0:
+                for c in range(m, 9):
+                    if c % 2 == 0:
+                        for d in range(9, n - 1, -1):
+                            if d % 2 != 0:
+                                if a == c and b == d:
+                                    print("Cannot change the same player.")
+                                else:
+                                    print(f"{a}{b} - {c}{d}")
+                                    valid_changes += 1
+                                    if valid_changes == 6:
+                                        exit()

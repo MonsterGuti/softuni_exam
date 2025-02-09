@@ -1,0 +1,23 @@
+days_count = 1
+desired_metres = 8848
+current_metres = 5364
+
+while True:
+    command = input()
+    if command == "END":
+        break
+    metres_of_climbing = int(input())
+    if command == "Yes":
+        days_count += 1
+        if days_count > 5:
+            break
+        current_metres += metres_of_climbing
+    elif command == "No":
+        current_metres += metres_of_climbing
+    if current_metres >= desired_metres:
+        print(f"Goal reached for {days_count} days!")
+        break
+
+if current_metres < desired_metres:
+    print("Failed!")
+    print(current_metres)
