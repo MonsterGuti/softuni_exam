@@ -1,6 +1,0 @@
-rent_money = int(input("Enter the rent cost: "))
-statues = 0.70 * rent_money
-catering = 0.85 * statues
-voicing = 0.5 * catering
-total_expenses = statues + catering + voicing + rent_money
-print(f"The total expenses are: {total_expenses:.2f}")
